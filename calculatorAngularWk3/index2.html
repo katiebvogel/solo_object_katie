@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="CalculatorApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+    <link href="stylesheet.css" rel="stylesheet">
+    <title>Katie's Calculator</title>
+  </head>
+  <body>
+    <body ng-controller="MainController">
+    <header>
+      <h1>Let's Calculate!</h1>
+        <h3>With this great calculator, you can add, subtract, multiply, and divide any two single-digit numbers!</h3>
+    </header>
+      <div class = "section" id="calculator-wrapper">
+
+        <div class="span">
+
+              <div class="row">
+                <button ng-click= "handleClick(7)">7</button>
+                <button ng-click= "handleClick(8)">8</button>
+                <button ng-click= "handleClick(9)">9</button>
+                <button ng-click= "handleClick(0)">0</button>
+                <!-- <button class="btn" data-constant="open">(</button>
+                <button class="btn" data-constant="close">)</button> -->
+              </div>
+              <div class="row">
+                <button ng-click= "handleClick(4)">4</button>
+                <button ng-click= "handleClick(5)">5</button>
+                <button ng-click= "handleClick(6)">6</button>
+                <button ng-click= "handleClick('-')" ng-model="oerator">-</button>
+              <button ng-click= "handleClick('+')" ng-model="operator">+</button>
+              </div>
+              <div class="row">
+                <button ng-click= "handleClick(1)">1</button>
+                <button ng-click= "handleClick(2)">2</button>
+                <button ng-click= "handleClick(3)">3</button>
+                <button ng-click= "handleClick('/')" ng-model="operator">/</button>
+                <button ng-click= "handleClick('*')" ng-model="operator">*</button>
+              </div>
+              <!-- <div class="row">
+                <button ng-click="clearScreen()" ng-init= " ">Clear</button>
+
+              </div> -->
+            <section id= "answers" ng-model="answerSpot">
+              <span ng-repeat="result in resultWindow track by $index">
+                {{result}}
+              </span>
+            </section>
+            <section>
+            <button id="enter" ng-click="getAnswer(total)">ENTER</button>
+          </section>
+            <section id="finalAnswer">
+            <div ng-model="finalAnswer">
+              Answer: {{total}}
+            </div>
+
+          </section>
+          <div>
+
+
+
+        </div>
+
+
+        <!-- <div class="span">
+           <legend>History</legend>
+           <div id="calc-panel">
+             <div id="calc-history">
+               <ol id="calc-history-list"></ol>
+             </div>
+           </div>
+         </div> -->
+      </div>
+  </body>
+</html>
